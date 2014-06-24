@@ -57,6 +57,7 @@ int main()
         int count = 0;
         printf("Please enter source node number:");
         scanf("%d", &source_node);
+        printf("\nProcessing..");
         for (m=0; m<max_row ; m++)
             {
                 num_nodes = max(array_read[m][1],num_nodes);
@@ -65,10 +66,7 @@ int main()
         int LIST[num_nodes];
         memset( LIST, 0, num_nodes*sizeof(int) );
         LIST[source_node - 1] = 1;
-        for (m=0; m<num_nodes ; m++)
-            {
-                count = count+LIST[m];
-            }
+        count = 1;
         int Final_data[num_nodes][3];
         /*Node number, reachability, predecessor*/
         //The For loop below initializes the Final Data matrix
@@ -109,16 +107,18 @@ int main()
                         }
                 }
             LIST[k-1] = 0;
+            count = 0;
             for (m=0; m<num_nodes; m++)
                 {
                     count = count+LIST[m];
                 }
-        }while (count!=0);
+        }while (count>0);
+        printf("\nNode \t Is accessible \t Predecessor \n");
         for(i=0;i<num_nodes; i++)
             {
                     for (j=0;j<3;j++)
                         {
-                         printf("%d",Final_data[i][j]);
+                         printf("%d \t\t",Final_data[i][j]);
                         }
                     printf("\n");
             }
