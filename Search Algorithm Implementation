@@ -88,6 +88,11 @@ int main()
         int numite=0; //Number of iterations, just to decide if negative cycle exists.
         do
         {
+            if (numite>max_row)
+                {
+                    printf("There is a cycle in the network.");
+                    break;
+                }
             numite++;
             int ntbe = 0;
             k=0;
