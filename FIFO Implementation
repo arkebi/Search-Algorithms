@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -119,7 +118,6 @@ int main()
                         }
                 }
         }while (ntbe != 0);
-        printf("%d",numite);
         printf("\nNode \t Is accessible \t Predecessor \n");
         for(i=0;i<num_nodes; i++)
             {
